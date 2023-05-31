@@ -1,0 +1,23 @@
+import pandas  as pd
+mydf1 = pd.read_csv('myc1.csv')
+mydf1.columns = ['月份','水果名','num','price','money']
+mydf1.plot(y='num',kind='hist')
+
+
+mydf1.plot(y='num',kind='box')
+
+mydf1.plot(y='num',kind='kde')
+
+mydf1.plot(y='num',kind='area')
+
+mydf2=mydf1.sample(n=6,replace=True)
+mydf2.plot(y='num',kind='pie')
+
+mydf1.plot(x='num',y='money',kind='scatter')
+
+import numpy as np
+import pandas as pd
+mydf1 = pd.DataFrame(np.random.randint(1,10,size=(1000,4)),
+                  index=pd.date_range('1/1/2000', periods=1000),
+                  columns=list('ABCD'))
+mydf1.plot(x='A',y='B',kind='hexbin',gridsize=12)

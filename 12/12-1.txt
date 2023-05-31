@@ -1,0 +1,11 @@
+import pandas  as pd
+import pandas  as pd
+mydf1 = pd.read_csv('myc1.csv')
+mydf1.columns = ['月份','水果名','num','price','money']
+display(mydf1)
+
+
+mydf1.plot(y='num')
+
+mydf1.plot(y=['num','price','money'])
+

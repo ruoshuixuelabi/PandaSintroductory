@@ -1,0 +1,21 @@
+#导入iris数据集
+from sklearn.datasets import load_iris 
+from sklearn.ensemble import RandomForestClassifier #导入随机森林分类器
+#load_iris是sklearn的测试数据，在这用来做随机森林
+iris = load_iris()
+#调用随机森林分类器
+clf = RandomForestClassifier()
+#训练的代码
+clf.fit(iris.data, iris.target)
+#假设要预测第115个样本的值
+sample_idx = 114
+#第115个样本的各个属性，在这可以看到有4个属性
+print("第115个样本的各个属性:",iris.data[sample_idx])
+prediction = clf.predict(iris.data[sample_idx:sample_idx+1])
+print("预测第115个样本属于哪一类：",prediction)
+truth = iris.target[sample_idx]
+print("实际上第115个样本是哪一类：",truth)
+if prediction==truth :
+    print("随机森林机器算法预测正确！")
+else:
+    print("随机森林机器算法预测错误！")

@@ -1,0 +1,17 @@
+import pandas as pd
+import numpy as np
+myse1 = pd.DataFrame(np.random.randint(100, 1000,size=(96,6)), 
+                    columns=['A', 'B', 'C','D','E','F'],
+                    index=pd.date_range('2021-12-20 10:00:00', periods=96,freq='5T'))
+print(myse1)
+
+
+myse1.head()
+
+myse1.shift(1).head()
+
+myse1.shift(1,freq='5T').head()
+
+myse1.diff(1).head()
+
+myse1.rolling(window=3).mean().head()

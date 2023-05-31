@@ -1,0 +1,24 @@
+import pandas as pd
+import numpy as np
+data = {  "编号":[100001,100012,100003],
+          "日期":pd.date_range('20211108', periods=3),
+          "类型":["computer","phone","pad"],
+          "品牌":['Mac-Dell-Lenovo','Mac-XiaoMi-HuaWei','Mac-HuaWei'],
+          "价格":[5869.32,7256.34,3895.89]
+       }
+mydf1 = pd.DataFrame(data) 
+mydf1.set_index(['编号'],inplace=True)
+display(mydf1)
+
+
+mydf1['品牌-1'] = mydf1.品牌.astype('str').str[0:3]
+display(mydf1)
+
+
+mydf1['品牌-2'] = mydf1.品牌.apply(lambda x: x.split('-')[1])  
+display(mydf1)
+
+
+mydf1['品牌-3']  = mydf1.品牌.apply(lambda x: x.split('-')[2] 
+                                      if x.count('-') >= 2 else np.nan)  
+display(mydf1)

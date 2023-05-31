@@ -1,0 +1,21 @@
+import pandas  as pd
+mydf1 = pd.read_csv('myc1.csv')
+display(mydf1)
+
+
+mydf1.sample(n=5)
+
+mydf1.sample(frac=0.5)
+
+mydf1.sample(n=12,replace=True)
+
+
+mydf2 = mydf1.loc[mydf1['金额']>1500]
+display(mydf2)
+
+
+mydf2.sample(n=3)
+
+mydf2.sample(n=3, weights=[0.1,0.2,0.1,0.1,0.1,0.2,0.1,0.1])
+
+mydf2.sample(n=2,axis=1)

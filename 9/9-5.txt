@@ -1,0 +1,20 @@
+import pandas as pd
+import numpy as np
+data = {  "编号":[100001,100012,100003,100004],
+          "日期":pd.date_range('20211218', periods=4),
+          "姓名":["赵可佳","张可","周可","徐南"],
+          "性别":['女','男','女','男'],
+          "工龄":[5,8,np.nan,3],
+          "工资":[5869.32,np.nan,6895.89,np.nan]
+       }
+mydf1 = pd.DataFrame(data) 
+display(mydf1)
+
+
+
+mydf1.工龄.count()
+
+mydf1.count()
+
+mydf1.count(axis=1)
+

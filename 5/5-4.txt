@@ -1,0 +1,14 @@
+import pandas as pd
+data = {"姓名":["赵佳","张可","周远","徐南"],
+        "性别":['女','男','女','男'],
+        "年龄":[25,28,21,30],
+        "工资":[5869.32,7256.34,6895.89,7289.72]
+       }
+mydf1 = pd.DataFrame(data) 
+print(mydf1)
+
+
+mys1 = pd.Series(['李海', '男', 31,5624.78],index=['姓名', '性别', '年龄', '工资'])
+mys2 = pd.Series(['刘瑞', '女', 24,4614.41],index=['姓名', '性别', '年龄', '工资'])
+mydf2 = mydf1.append([mys1,mys2], ignore_index=True)
+mydf2

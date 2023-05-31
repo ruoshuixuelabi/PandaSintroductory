@@ -1,0 +1,7 @@
+import pandas  as pd
+myt1 =pd.Timestamp('2021-12-15')
+display(myt1)
+
+myt2 =pd.Timestamp('5:06:32')
+display(myt2)
+

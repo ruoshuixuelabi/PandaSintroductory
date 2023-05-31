@@ -1,0 +1,20 @@
+import pandas as pd
+mydf1 = pd.read_excel('myexcel1.xls',sheet_name=1)
+display(mydf1)
+
+mydf1.数量.sum()
+
+mydf1.sum()
+
+mydf1.sum(numeric_only=True)
+
+mydf1.sum(axis=1,numeric_only=True)
+
+mydf1.loc[mydf1['城市']=='青岛'].数量.sum()
+
+mydf1.query("城市=='上海' & 数量>600").数量.sum()
+
+mydf1.query("城市!='上海' | 数量<=500").销售额.sum()
+
+mydf1.query("业务员 in['李可','张平'] & 时间 in['春季','秋季']").销售额.sum()
+

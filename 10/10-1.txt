@@ -1,0 +1,26 @@
+import pandas as pd
+mydf1 = pd.read_excel('myexcel1.xls',sheet_name=1)
+display(mydf1)	
+
+
+myg1 = mydf1.groupby('城市')
+print(myg1)
+
+
+print(myg1.groups)
+
+display(myg1.get_group('上海'))
+
+for name,group in myg1:
+    display(name)
+display(group)
+
+
+myg2 = mydf1.groupby(['城市','时间'])
+myg2.groups
+
+display(myg2.get_group(('青岛', '秋季')))
+
+for name,group in myg2:
+    display(name)
+display(group)

@@ -1,0 +1,19 @@
+import pandas as pd
+data = {"姓名":["赵佳","张可","周远","徐南"],
+        "性别":['女','男','女','男'],
+        "年龄":[25,28,21,30],
+        "工资":[5869.32,7256.34,6895.89,7289.72]
+       }
+mydf1 = pd.DataFrame(data) 
+display(mydf1)
+data1 = {"姓名":["李红","赵闲","刘峰"],
+         "性别":['女','男','男'],
+         "工资":[6636.21,4326.49,7489.15]
+       }
+mydf2 = pd.DataFrame(data1) 
+display(mydf2)
+
+mydf3=pd.concat([mydf1,mydf2],ignore_index=True)
+display(mydf3)
+
+

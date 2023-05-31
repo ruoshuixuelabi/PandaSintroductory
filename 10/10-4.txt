@@ -1,0 +1,29 @@
+import pandas as pd
+mydf1 = pd.read_excel('myexcel1.xls',sheet_name=1)
+display(mydf1)
+
+display(pd.pivot_table(mydf1,index='城市'))
+
+display(pd.pivot_table(mydf1,index='城市',columns='时间'))
+
+import numpy as np
+display(pd.pivot_table(mydf1,index='时间',columns='城市',aggfunc= [np.sum,np.mean]))
+
+
+import numpy as np
+display(pd.pivot_table(mydf1,index='时间',columns='城市',values='销售额', aggfunc=[np.sum,np.mean,np.max,np.min,np.size]))
+
+
+import numpy as np
+display(pd.pivot_table(mydf1,index='时间',columns='城市',values='销售额',
+ aggfunc=[np.sum,np.mean,np.max,np.min,np.size], fill_value=0))
+
+
+import numpy as np
+display(pd.pivot_table(mydf1,index='时间',columns='城市',values='销售额', aggfunc=[np.sum,np.mean,np.max,np.min,np.size] ,fill_value=0, margins=True ))
+
+import numpy as np
+display(pd.pivot_table(mydf1,index='时间',columns='城市',values='销售额', aggfunc=[np.sum,np.mean,np.max,np.min,np.size] ,fill_value=0, margins=True ))
+
+import numpy as np
+display(pd.pivot_table(mydf1,index='时间',columns='城市',values='销售额', aggfunc=[np.sum,np.mean,np.max,np.min,np.size] ,fill_value=0, margins=True, margins_name='总计'))

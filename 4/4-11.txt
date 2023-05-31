@@ -1,0 +1,25 @@
+import pandas as pd
+data = {
+  "姓名":['李明','张亮', '周可佳','王瑞','刘伦瑞'],
+  "性别": ['男','男','女','女','男'],
+  "年龄": [14,113,15,104,112],   
+  "成绩": [115,89,98,125,94]
+}
+mydf1 = pd.DataFrame(data) 
+mydf1
+
+
+mydf1.loc[1, '年龄'] = 15
+mydf1
+
+
+for x in mydf1.index:
+  if mydf1.loc[x, '年龄'] > 100:
+     mydf1.loc[x, '年龄'] = 16
+mydf1
+
+
+for x in mydf1.index:
+  if mydf1.loc[x, '成绩'] > 100:
+     mydf1.drop(x, inplace = True)
+mydf1

@@ -1,0 +1,18 @@
+#导入pandas和numpy包
+import pandas as pd  
+import numpy as np
+#利用ndarray为系列赋值
+mydata1 = np.array(['a','b','c','d'])
+mys = pd.Series(mydata1)
+print("显示系列中的索引和数据：\n",mys)
+print()
+mydata2 = np.array(['C','C++','Python','Java'])
+myt = pd.Series(mydata2,index=[100,101,102,103])
+print("显示系列中的索引和数据：\n",myt)
+print()
+s = pd.Series(['C','C++','Python','Java','HTML'],index = ['a','b', 'c','d','e'])
+print("系列中的第一个数据：",s[0])
+print("系列中的第三个数据：",s['c'])
+print("系列中的第二和第四数据：\n",s[['b','d']])
+print("系列中的前三个数据：\n",s[:3])
+print("系列中的后三个数据：\n",s[-3:])

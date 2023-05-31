@@ -1,0 +1,13 @@
+import pandas as pd
+mydf1 = pd.read_excel('myexcel1.xls',sheet_name=1)
+mydf1.loc[(mydf1['数量']>700)]
+
+
+mydf1.loc[~(mydf1['数量']>700)]
+
+mydf1.loc[((mydf1['业务员']=='李亮') | (mydf1['业务员']=='周顺利'))
+          &(mydf1['销售额']>70000) ]
+
+
+mydf1.loc[~(((mydf1['业务员']=='李亮') | (mydf1['业务员']=='周顺利'))
+          & (mydf1['销售额']>70000)) ]

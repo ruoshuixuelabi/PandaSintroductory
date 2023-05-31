@@ -1,0 +1,19 @@
+import pandas as pd
+import numpy as np
+data = {  "number":[101,102,103,104],
+          "日期":pd.date_range('20211218', periods=4),
+          "姓名":["赵可佳","张可","周可","徐南"],
+          "性别":['女','男','女','男'],
+          "year":[25,38,27,33],
+          "pay":[5869.32,7256.34,6895.89,7289.72]
+       }
+mydf1 = pd.DataFrame(data) 
+display(mydf1)
+
+mydf1.plot(x='number',y='year',kind='bar')
+
+mydf1.plot(x='number',y='year',kind='barh')
+
+mydf1.plot(x='number',y=['year','pay'],kind='bar')
+
+mydf1.plot(x='number',y=['year','pay'],kind='barh')

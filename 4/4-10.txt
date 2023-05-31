@@ -1,0 +1,14 @@
+import pandas as pd
+# 第三个日期格式错误
+data = {
+  "日期": ['2021/6/01', '2021/6/02' , '20210603'],
+  "水果名":['香蕉','苹果','桃子'],
+  "价格": [3.5, 6, 4.5]
+}
+mydf = pd.DataFrame(data)
+mydf
+
+
+
+mydf['日期'] = pd.to_datetime(mydf['日期'])
+mydf

@@ -1,0 +1,8 @@
+import pandas as pd
+import numpy as np
+mydf = pd.DataFrame(np.random.randn(10, 6), columns = ['A', 'B', 'C', 'D','E','F'])
+display(mydf)
+
+
+mydf.B
+

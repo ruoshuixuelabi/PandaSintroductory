@@ -1,0 +1,16 @@
+import pandas as pd
+data = {
+  "姓名":['李明','张亮','李明', '周可佳','王瑞','周可佳','刘伦瑞'],
+  "性别": ['男','男','男','女','女','女','男'],
+  "年龄": [14,13,14,15,14,15,12],   
+  "成绩": [95,89,95,98,85,98,94]
+}
+mydf1 = pd.DataFrame(data) 
+mydf1
+
+
+mydf1.duplicated()
+
+
+mydf1.drop_duplicates(inplace = True)
+mydf1

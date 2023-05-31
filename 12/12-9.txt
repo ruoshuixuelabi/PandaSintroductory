@@ -1,0 +1,29 @@
+import pandas  as pd
+mydf1 = pd.read_csv('myc1.csv')
+mydf1.columns = ['月份','水果名','num','price','money']
+import matplotlib.pyplot as plt  
+plt.rc('font',family='SimHei',size=13)
+x = mydf1['price'] 
+fig, ax = plt.subplots(figsize=(12,6))
+ax.plot(x, x+10, color="blue", linewidth=0.25)
+ax.plot(x, x+20, color="blue", linewidth=0.50)
+ax.plot(x, x+30, color="blue", linewidth=1.00)
+ax.plot(x, x+40, color="blue", linewidth=2.00)
+# 线条样式选择
+ax.plot(x, x+50, color="red", lw=2, linestyle='-',alpha=0.5)  #半透明红色
+ax.plot(x, x+60, color="#1155dd", lw=2, ls='-.')# 浅蓝色的RGB十六进制码
+ax.plot(x, x+70, color="#15cc55", lw=2, ls=':') # 浅绿色的RGB十六进制码
+# 自定义设置
+line, = ax.plot(x, x+80, color="black", lw=1.50)
+line.set_dashes([5, 10, 15, 10]) # 格式：线长, 间距, ...
+# 标记符号
+ax.plot(x, x+ 90, color="green", lw=2, ls='--', marker='+')
+ax.plot(x, x+100, color="green", lw=2, ls='--', marker='o')
+ax.plot(x, x+110, color="green", lw=2, ls='--', marker='s')
+ax.plot(x, x+120, color="green", lw=2, ls='--', marker='1')
+# 标记大小和颜色
+ax.plot(x, x+130, color="purple", lw=1, ls='-', marker='o', markersize=2)
+ax.plot(x, x+140, color="purple", lw=1, ls='-', marker='o', markersize=4)
+ax.plot(x, x+150, color="purple", lw=1, ls='-', marker='o', markersize= 8, markerfacecolor="red")
+ax.plot(x, x+160, color="purple", lw=1, ls='-', marker='s', markersize= 8,markerfacecolor="yellow",markeredgewidth=2,markeredgecolor="blue")
+ax.set_title('设置线条的宽度和颜色')

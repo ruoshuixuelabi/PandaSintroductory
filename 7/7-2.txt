@@ -1,0 +1,13 @@
+import pandas as pd
+mydf = pd.read_excel('myexcel1.xls',sheet_name=1)
+display(mydf)
+mydf.loc[:,'城市']
+
+mydf.loc[:,'业务员':'数量']
+
+mydf.loc[:,'时间':]
+
+mydf.loc[:,:'时间']
+
+
+mydf.loc[:,['业务员','城市','销售额']]

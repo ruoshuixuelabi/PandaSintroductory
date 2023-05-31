@@ -1,0 +1,14 @@
+import pandas as pd
+mydf1 = pd.read_excel('myexcel1.xls',sheet_name=2,skiprows=3)
+display(mydf1)
+mydf1.iloc[:,2]
+
+
+mydf1.iloc[:,[1,3,6]]
+
+
+mydf1.iloc[:,4:]
+
+
+mydf1.iloc[:,4:]
+

@@ -1,0 +1,20 @@
+#导入iris数据集和决策树
+from sklearn.datasets import load_iris 
+from sklearn import tree
+#load_iris是sklearn的测试数据，在这用来做决策树
+iris = load_iris()
+#建立最大深度为5的决策树，并用测试数据来训练这棵树
+clf = tree.DecisionTreeClassifier(max_depth = 5)
+clf = clf.fit(iris.data, iris.target)
+#假设要预测第90个样本的值
+sample_idx = 89
+#第90个样本的各个属性，在这可以看到有4个属性
+print("第90个样本的各个属性:",iris.data[sample_idx])
+prediction = clf.predict(iris.data[sample_idx:sample_idx+1])
+print("预测第90个样本属于哪一类：",prediction)
+truth = iris.target[sample_idx]
+print("实际上第90个样本是哪一类：",truth)
+if prediction==truth:
+    print("决策树机器算法预测正确！")
+else:
+    print("决策树机器算法预测错误！")

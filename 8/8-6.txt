@@ -1,0 +1,8 @@
+import pandas  as pd
+mydf1 = pd.read_csv('myc1.csv')
+mydf1.loc[(mydf1['单价']==3.5) | (mydf1['月份']==202106) ]
+
+
+mydf1.loc[(mydf1['数量']>700) | (mydf1['数量']<200) ]
+
+mydf1.loc[(mydf1['数量']>760) | ((mydf1['数量']<150)&(mydf1['水果名']== '苹果') )]

@@ -1,0 +1,27 @@
+import pandas  as pd
+mydf1 = pd.read_csv('myc1.csv')
+mydf1.columns = ['月份','水果名','num','price','money']
+from matplotlib import pyplot as plt 
+x = mydf1['num']
+y = mydf1['money']
+plt.figure()
+plt.plot(x,y,'*r')
+plt.show()
+
+
+import pandas  as pd
+mydf1 = pd.read_csv('myc1.csv')
+mydf1.columns = ['月份','水果名','num','price','money']
+from matplotlib import pyplot as plt 
+plt.figure()
+plt.plot(mydf1['num'],'.c')
+plt.show()
+
+
+import pandas  as pd
+mydf1 = pd.read_csv('myc1.csv')
+mydf1.columns = ['月份','水果名','num','price','money']
+from matplotlib import pyplot as plt 
+plt.figure()
+plt.plot(mydf1['num'],'.c',mydf1['money'],'+g')
+plt.show()

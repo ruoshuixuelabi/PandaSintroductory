@@ -1,0 +1,27 @@
+import pandas  as pd
+mytt1 =pd.Timestamp('2021-12-21 11:16:42')
+display(mytt1)
+
+
+print('显示的日期时间是：',mytt1.year,'年',mytt1.month,'月',mytt1.day, '日',mytt1.hour,'时',mytt1.minute,'分',mytt1.second,'秒')
+
+print('一周中的第几天:',mytt1.dayofweek)
+print('一年中的第几周:',mytt1.weekofyear)
+print('一年中的第几季度:',mytt1.quarter)
+
+if mytt1.is_leap_year :
+    print('显示的日期是润年!')
+else :
+     print('显示的日期不是润年!')
+if mytt1.is_month_start :
+    print('显示的日期是月初第一天!')
+else :
+     print('显示的日期不是月初第一天!')
+if mytt1.is_quarter_end :
+    print('显示的日期是季度最后一天!')
+else :
+     print('显示的日期不是季度最后一天!')
+if mytt1.is_year_start :
+    print('显示的日期是年初第一天!')
+else :
+     print('显示的日期不是年初第一天!')

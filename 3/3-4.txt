@@ -1,0 +1,25 @@
+import pandas as pd
+import numpy as np
+tsdf = pd.DataFrame(np.random.randn(10,6), columns=['A', 'B', 'C', 'D','E','F'],
+                    index=pd.date_range('11/1/2021', periods=10))
+print(tsdf)
+tsdf.to_csv('pscsv1.csv')
+print('\n把内容保存pscsv1.csv文件中！')
+
+
+import pandas as pd
+import numpy as np
+tsdf = pd.DataFrame(np.random.randint(100, 1000,size=(8,6)), columns= ['A', 'B', 'C','D','E','F'],
+                    index=pd.date_range('6/6/2021', periods=8))
+print(tsdf)
+tsdf.to_excel('myexe12.xls')
+print('\n把内容保存myexe12.xls文件中！')
+
+
+import pandas as pd
+import numpy as np
+tsdf = pd.DataFrame(np.random.randint(100, 1000,size=(9,6)), columns= ['A', 'B', 'C','D','E','F'],
+                    index=pd.date_range('8/8/2021', periods=9))
+print(tsdf)
+tsdf.to_json('myjson2.json',)
+print('\n把内容保存myjson2.json文件中！')

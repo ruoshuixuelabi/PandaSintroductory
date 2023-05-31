@@ -1,0 +1,7 @@
+import pandas  as pd
+df = pd.read_csv('myc1.csv')
+df
+
+df.tail(5)
+
+df.tail(8)

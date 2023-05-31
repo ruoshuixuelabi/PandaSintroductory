@@ -1,0 +1,10 @@
+import pandas as pd
+mydf1 = pd.read_excel('myexcel1.xls',sheet_name=1)
+display(mydf1)
+
+mydf1.销售额.var()
+
+mydf1.loc[mydf1['城市']=='上海'].数量.var()
+
+mydf1.loc[(mydf1['时间']!='夏季')&(mydf1['城市']=='青岛')].销售额.var()
+

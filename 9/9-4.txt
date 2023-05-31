@@ -1,0 +1,19 @@
+import pandas as pd
+mydf1 = pd.read_excel('myexcel1.xls',sheet_name=1)
+display(mydf1)
+
+
+mydf1.销售额.min()
+
+mydf1.loc[mydf1['销售额']>mydf1.销售额.min()*1.5]
+
+mydf1.loc[(mydf1['销售额']>mydf1.销售额.min()*1.4)
+           & (mydf1['城市']=='上海')     ]
+
+
+mydf1.min(numeric_only=True)
+
+mydf1.loc[mydf1['时间']=='春季'].销售额.min()
+
+mydf1.loc[(mydf1.loc[mydf1['时间']=='春季'].销售额.min())
+           & (mydf1['业务员'] !='李可')    ]

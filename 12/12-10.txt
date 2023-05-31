@@ -1,0 +1,12 @@
+import pandas  as pd
+mydf1 = pd.read_csv('myc1.csv')
+mydf1.columns = ['月份','水果名','num','price','money']
+import matplotlib.pyplot as plt  
+plt.rc('font',family='SimHei',size=13)
+fig, axes = plt.subplots(1, 2, figsize=(10,3))
+# 默认网格外观
+axes[0].plot(mydf1['num'], lw=2)
+axes[0].grid(True)
+# 用户定义的网格外观
+axes[1].plot(mydf1['num'],  lw=5)
+axes[1].grid(color='r', alpha=0.5, linestyle='dashed', linewidth= 0.5)

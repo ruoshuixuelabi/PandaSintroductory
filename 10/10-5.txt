@@ -1,0 +1,31 @@
+import pandas as pd
+mydf1 = pd.read_excel('myexcel1.xls',sheet_name=1)
+display(mydf1)
+
+
+pd.crosstab(mydf1.城市,mydf1.时间 )
+
+pd.crosstab(mydf1.城市,mydf1.时间 ,margins = True)
+
+pd.crosstab(mydf1.城市,mydf1.时间 ,margins = True,margins_name='总计')
+
+pd.crosstab(mydf1.城市,mydf1.时间 ,margins = True,margins_name='总计')
+
+import numpy as np
+pd.crosstab(mydf1.城市,mydf1.时间,values=mydf1.销售额,aggfunc=[np.sum, np.mean,np.max,np.min,np.size])
+
+
+import numpy as np
+pd.crosstab([mydf1.城市,mydf1.业务员],mydf1.时间 ,values=mydf1.销售额,aggfunc=np.sum)
+
+
+import numpy as np
+pd.crosstab(mydf1.城市,[mydf1.时间,mydf1.业务员] ,values=mydf1.销售额,aggfunc=np.mean)
+
+
+pd.crosstab(mydf1.业务员,mydf1.时间,margins = True,margins_name='总计')
+
+pd.crosstab(mydf1.业务员,mydf1.时间 ,margins = True,margins_name='总计', normalize='index')
+
+pd.crosstab(mydf1.业务员,mydf1.时间 ,margins = True,margins_name='总计', normalize='columns')
+

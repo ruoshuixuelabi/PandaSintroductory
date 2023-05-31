@@ -1,0 +1,22 @@
+import pandas as pd
+mydf1 = pd.read_excel('myexcel1.xls',sheet_name=1)
+display(mydf1)
+mygb1 = mydf1.groupby('城市')
+print(mygb1.groups)
+
+
+mydf1['不同城市数量平均值']= mydf1.groupby('城市')['数量'].transform ('mean')
+display(mydf1)
+
+
+
+mydf1['不同城市销售额平均值']= mydf1.groupby('城市')['销售额'].transform ('mean')
+mydf1['不同城市销售额最大值']= mydf1.groupby('城市')['销售额'].transform ('max')
+display(mydf1)
+
+
+mydf1['不同城市和时间的平均值']= mydf1.groupby(['城市','时间'])['数量'].transform('mean')
+display(mydf1)
+
+
+mydf1.loc[:,['城市','时间','不同城市数量平均值','不同城市和时间的平均值']]

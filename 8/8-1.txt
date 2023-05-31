@@ -1,0 +1,11 @@
+import pandas  as pd
+mydf1 = pd.read_csv('myc1.csv')
+display(mydf1)
+
+
+mydf1.loc[mydf1['水果名']=='苹果']
+
+mydf1.loc[mydf1['数量']==101]
+
+mydf1.loc[mydf1['月份']==202106]
+

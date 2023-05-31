@@ -1,0 +1,4 @@
+workername = input("请输入工人的姓名：")
+workersex  = input("请输入工人的性别:")
+workerwage  = input("请输入工人的工资：")
+print("工人的姓名是%s，\t工人的性别是%s，\t工资是%f" % (workername, workersex,float(workerwage)))

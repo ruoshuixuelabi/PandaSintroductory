@@ -1,0 +1,12 @@
+import pandas  as pd
+mydf1 = pd.read_csv('myc1.csv')
+mydf1.columns = ['月份','水果名','num','price','money']
+from matplotlib import pyplot as plt 
+x = mydf1['num']
+y = mydf1['money']
+plt.figure()
+plt.plot(x,y)
+plt.show()
+
+
+plt.figure(figsize=(12,3),dpi=120,facecolor='red')

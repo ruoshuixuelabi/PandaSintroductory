@@ -1,0 +1,17 @@
+import pandas as pd
+import numpy as np
+data = {  "编号":[100001,100012,100003,100004],
+          "日期":pd.date_range('20211108', periods=4),
+          "姓名":["赵佳","张可","周远","徐南"],
+          "性别":['女','男','女','男'],
+          "年龄":[25,28,21,30],
+          "工资":[5869.32,7256.34,6895.89,7289.72]
+       }
+mydf1 = pd.DataFrame(data) 
+mydf1.set_index(['编号'],inplace=True)
+display(mydf1)
+
+
+display(mydf1.sort_index())
+
+display(mydf1.sort_index(ascending=False))

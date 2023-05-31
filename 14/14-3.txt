@@ -1,0 +1,13 @@
+import pandas as pd
+myts1=pd.DataFrame({'A':[1,2,3,4,5,6],'B':['10:12:05','10:12:06','10:12:07','10:12:08','10:12:09','10:12:10']},                 index=pd.date_range(start='10:12:05',periods=6,freq='S'))
+print(myts1)
+
+
+myts1.info()
+
+myts1.B=pd.to_datetime(myts1.B)
+display(myts1)
+
+
+print('把索引中的时间转化为字符串型：',myts1.index.time.astype(str))
+print('把索引中的日期转化为字符串型：',myts1.index.date.astype(str))

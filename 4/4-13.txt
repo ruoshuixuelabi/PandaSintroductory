@@ -1,0 +1,15 @@
+import pandas as pd
+data = {"A":["赵可佳","张可","周远","徐南"],
+        "B":['女','男','女','男'],
+        "C":[25,28,21,30],
+        "D":[5869.32,7256.34,6895.89,7289.72]
+       }
+mydf1 = pd.DataFrame(data) 
+mydf1
+
+
+mydf1.columns = ['姓名','性别','年龄','工资']
+mydf1
+
+
+mydf1.rename(columns={'姓名': '职工姓名'})

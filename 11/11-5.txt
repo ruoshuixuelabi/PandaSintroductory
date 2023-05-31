@@ -1,0 +1,12 @@
+import pandas  as pd
+mydf1 = pd.read_csv('myc1.csv')
+display(mydf1)
+
+
+mydf1.数量.std()
+
+mydf1.loc[mydf1['数量']<mydf1.数量.std()]
+
+mydf1.loc[mydf1['水果名']=='香蕉'].数量.std()
+
+mydf1.std(numeric_only=True)

@@ -1,0 +1,38 @@
+import pandas  as pd
+#导入iris数据集
+from sklearn.datasets import load_iris 
+iris = load_iris()
+mydf1 = pd.Series(iris) 
+display(mydf1)
+
+
+mydf2 = pd.DataFrame(mydf1.data) 
+display(mydf2)
+
+
+mydf2.columns = ['花萼长度','花萼宽度','花瓣长度','花瓣宽度']
+display(mydf2)
+
+
+mydf3 = pd.DataFrame(mydf1.target) 
+display(mydf3)
+
+
+mydf3.columns = ['属种']
+display(mydf3)
+
+
+
+mydf4 = pd.concat([mydf2,mydf3],axis = 1)
+display(mydf4)
+
+
+
+mydf5 = pd.Series(iris.target_names) 
+display(mydf5)
+
+
+mydf6 = pd.Series(iris.feature_names) 
+display(mydf6)
+
+

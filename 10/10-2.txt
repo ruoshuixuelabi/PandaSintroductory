@@ -1,0 +1,15 @@
+import pandas as pd
+mydf1 = pd.read_excel('myexcel1.xls',sheet_name=1)
+display(mydf1)
+mygb1 = mydf1.groupby('时间')
+print(mygb1.groups)
+
+display(mygb1['数量'].agg(['mean']))
+
+display(mygb1['销售额'].agg(['mean','sum','max','min','count']))
+
+mygb2 = mydf1.groupby(['时间','业务员'])
+mygb2.groups
+
+
+display(mygb2['数量'].agg(['mean','sum','max','min','count']))

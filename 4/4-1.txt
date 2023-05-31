@@ -1,0 +1,16 @@
+import pandas as pd
+import numpy  as np
+mydf1 = pd.read_excel('myexcel1.xls',sheet_name=1)
+print(mydf1)
+mydf2 = pd.DataFrame(np.random.randn(4,6), columns=['A', 'B', 'C','D', 'E','F'],
+                    index=pd.date_range('11/1/2021', periods=4))
+print(mydf2)
+
+
+print('mydf1的维度是：',mydf1.shape)
+print('mydf1的行数是：',mydf1.shape[0])
+print('mydf1的列数是：',mydf1.shape[1])
+print()
+print('mydf2的维度是：',mydf2.shape)
+print('mydf2的行数是：',mydf2.shape[0])
+print('mydf2的列数是：',mydf2.shape[1])

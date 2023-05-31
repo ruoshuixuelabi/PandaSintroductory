@@ -1,0 +1,11 @@
+import pandas  as pd
+myt1 = pd.date_range(start='2021-12-10',end='2021-12-21')
+display(myt1)
+
+
+myt2 = pd.date_range(start='2021-12-10',periods=11,freq='M')
+display(myt2)
+
+myt3 = pd.date_range(start='2021-12-10 12:15:36',periods=11,freq='5T')
+display(myt3)
+

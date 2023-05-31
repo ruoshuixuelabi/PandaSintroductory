@@ -1,0 +1,20 @@
+import pandas  as pd
+df = pd.read_csv('myc1.csv')
+df
+
+import pandas  as pd
+df = pd.read_csv('myc1.csv',header=1)
+df
+
+
+import pandas  as pd
+df = pd.read_csv('myc1.csv',header=3,names=['a','b','c','d','e'])
+df
+
+import pandas  as pd
+df = pd.read_csv('myc1.csv',index_col='单价')
+df
+
+import pandas  as pd
+df = pd.read_csv('myc1.csv',usecols=['水果名','单价'])
+df

@@ -1,0 +1,18 @@
+import pandas as pd
+mydf1 = pd.read_excel('mybook1.xls',sheet_name=0)
+print(mydf1)
+
+import pandas as pd
+missing_values = ["n/a", "na", "--"]
+mydf1 = pd.read_excel('mybook1.xls',sheet_name=0,na_values = missing_values)
+print(mydf1)
+
+mydf2 = mydf1.dropna()
+print(mydf2)
+
+mydf3 = mydf1.fillna(18)
+mydf3
+
+mydf4 = mydf1['编号'].fillna(100008888)
+mydf4
+ 

@@ -1,0 +1,22 @@
+import pandas as pd
+mydf1 = pd.read_excel('myexcel1.xls',sheet_name=1)
+display(mydf1)
+
+
+mydf1.query("城市=='上海'")
+
+mydf1.query("城市=='上海' & 数量>600")
+
+mydf1.query("城市!='上海' | 数量<=400")
+
+mydf1.query("业务员 in['李可','张平'] & 时间 in['春季','秋季']")
+
+mydf1.query("数量 in[541,641,721,841]")
+
+mya = 710
+mydf1.query("数量>@mya")
+
+myx = int(input("请输入数量："))
+mydf1.query("数量>@myx")
+
+

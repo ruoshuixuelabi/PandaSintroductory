@@ -1,0 +1,15 @@
+import pandas as pd
+mydf1 = pd.read_excel('myexcel1.xls',sheet_name=1)
+display(mydf1)
+
+
+mydf1.loc[(mydf1['时间'] == '春季') & (mydf1['数量']>500), '标记1']=1
+display(mydf1)
+
+mydf1.loc[((mydf1['时间'] == '春季')|(mydf1['时间'] == '秋季'))
+          & (mydf1['销售额']>=6000), '标记2']='好'
+display(mydf1)
+
+import numpy as np
+mydf1['标记3'] =np.where((mydf1['数量'] <=700)&(mydf1['城市']=='青岛'),'bad','good')
+display(mydf1)

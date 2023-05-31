@@ -1,0 +1,7 @@
+import pandas  as pd
+mydf1 = pd.read_csv('myc1.csv')
+mydf1.loc[mydf1['单价']<2.7]
+
+
+mydf1.loc[mydf1['金额']<=362.5]
+

@@ -1,0 +1,25 @@
+import pandas  as pd
+mydf1 = pd.read_csv('myc1.csv')
+display(mydf1)
+
+
+mydf1.数量.max()
+
+mydf1.loc[mydf1['数量']>mydf1.数量.max()*0.6]
+
+mydf1.loc[mydf1['水果名']=='香蕉'].数量.max()
+
+mydf1.loc[mydf1['数量']<=
+          mydf1.loc[mydf1['水果名']=='香蕉'].数量.max()*0.5]
+
+
+mydf1.max(numeric_only=True)
+
+mydf1.loc[(mydf1['单价']>mydf1.单价.max()*0.8) &
+           (mydf1['金额']<mydf1.金额.max()*0.9 ) ]
+
+
+mya = mydf1.单价.max()*0.6
+myb = mydf1.金额.max()*0.95
+myc = mydf1.数量.mean()
+mydf1.query(" (单价> @mya) & (金额 < @myb) & (数量>@myc) & (水果名 !='苹果') ")

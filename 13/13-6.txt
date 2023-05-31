@@ -1,0 +1,21 @@
+#导入NumPy函数包并指定导入包的别名为np
+import numpy as np 
+#导入多项式分布朴素贝叶斯
+from sklearn.naive_bayes import MultinomialNB
+
+X = np.random.randint(10, size=(9, 80))
+print(X)
+
+
+#变量y为一维数组,数组元素为1～9
+y = np.array([1, 2, 3, 4,5,6,7,8,9])
+#调用多项式朴素贝叶斯分类器
+clf = MultinomialNB()
+#进行训练，其中x, y分别为训练集和训练集的标签
+clf.fit(X, y)
+
+
+#预测X[4:5]的标签,即属于第几行
+print(clf.predict(X[4:5]))
+#显示预测准确率
+print("预测准确率:" + str(clf.score(X,y)))

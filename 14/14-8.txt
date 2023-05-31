@@ -1,0 +1,31 @@
+import pandas as pd 
+mydf = pd.read_csv('train.csv')
+display(mydf)
+
+
+import pandas as pd
+import matplotlib.pyplot as plt
+#中文乱码的处理
+plt.rcParams['font.sans-serif'] =['Microsoft YaHei']
+df = pd.read_csv('train.csv', nrows=11856)
+train = df[0:10392]   	#训练数据集
+test = df[10392:]     	#测试数据集
+#转换“Datetime”的格式，并设为索引
+df['Timestamp'] = pd.to_datetime(df['Datetime'], format= '%d-%m-%Y %H:%M')
+df.index = df['Timestamp']
+df = df.resample('D').mean()
+#训练数据
+train['Timestamp'] = pd.to_datetime(train['Datetime'], format= '%d-%m-%Y %H:%M')
+train.index = train['Timestamp']
+train = train.resample('D').mean()
+#测试数据
+test['Timestamp'] = pd.to_datetime(test['Datetime'], format= '%d-%m-%Y %H:%M')
+test.index = test['Timestamp']
+test = test.resample('D').mean()
+#绘制图形
+train.Count.plot(figsize=(15,8), title= '每日乘客人数', fontsize=14)
+test.Count.plot(figsize=(15,8), title= '每日乘客人数', fontsize=14)
+plt.show()
+
+
+

@@ -1,0 +1,12 @@
+import pandas as pd
+mydf1 = pd.read_excel('myexcel1.xls',sheet_name=1)
+display(mydf1)
+
+
+mydf1['数量'].cov(mydf1['销售额'])
+
+mydf1['单价'].cov(mydf1['销售额'])
+
+mydf1.cov()
+
+

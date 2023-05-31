@@ -1,0 +1,33 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from statsmodels.tsa.api import SimpleExpSmoothing  #导入简单指数平滑模块
+#中文乱码的处理
+plt.rcParams['font.sans-serif'] =['Microsoft YaHei']
+df = pd.read_csv('train.csv', nrows=11856)
+train = df[0:10392]   	#训练数据集
+test = df[10392:]     	#测试数据集
+#转换“Datetime”的格式，并设为索引
+df['Timestamp'] = pd.to_datetime(df['Datetime'], format= '%d-%m-%Y %H:%M')
+df.index = df['Timestamp']
+df = df.resample('D').mean()
+#训练数据
+train['Timestamp'] = pd.to_datetime(train['Datetime'], format= '%d-%m-%Y %H:%M')
+train.index = train['Timestamp']
+train = train.resample('D').mean()
+#测试数据
+test['Timestamp'] = pd.to_datetime(test['Datetime'], format= '%d-%m-%Y %H:%M')
+test.index = test['Timestamp']
+test = test.resample('D').mean()
+dd = np.asarray(train['Count'])
+y_hat_avg = test.copy()
+#调用简单指数平滑模函数处理数据
+fit = SimpleExpSmoothing(np.asarray(train['Count'])).fit (smoothing_level=0.6, optimized=False)
+y_hat_avg['SES'] = fit.forecast(len(test))
+plt.figure(figsize=(16, 8))
+plt.plot(train['Count'], label='训练')
+plt.plot(test['Count'], label='测试')
+plt.plot(y_hat_avg['SES'], label='简单指数平滑预测法')
+plt.legend(loc='best')
+plt.title("简单指数平滑预测法")
+plt.show()
